@@ -1,0 +1,18 @@
+{% extends "AdoptMe/base.html" %}
+
+{% block main %}
+
+    <ul>
+    {% for post in object_list %}
+    <li>
+        {{post}} 
+        <a href="{% url 'post-detail' post.id %}"> Detalle</a>
+        {% if user.is_authenticated and post.editor == user %}
+            <a href="{% url 'post-update' post.id %}"> Actualizar</a>
+            <a href="{% url 'post-delete' post.id %}"> Borrar</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

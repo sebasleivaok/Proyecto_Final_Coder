@@ -1,0 +1,12 @@
+{% extends "AdoptMe/base.html" %}
+
+{% block main %}
+<h1>Estas Seguro de querer BORRAR el Post: {{post.nombre}}</h1> 
+    <form method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit" value="Borrar">
+
+    </form>
+
+    {% endblock %}

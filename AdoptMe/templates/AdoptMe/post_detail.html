@@ -1,0 +1,11 @@
+{% extends "AdoptMe/base.html" %}
+
+{% block main %}
+<p>
+    {{object.nombre}}
+    <br>
+    {{object.caracteristicas}}
+    <br>
+    <a href="{% url 'post-list' %}"> volver</a>
+</p>
+{% endblock %}
