@@ -2,7 +2,9 @@
 
 {% block main %}
 <p>
-    {{object.nombre}}
+    <h1>{{object.nombre}}</h1>
+    <br>
+    <img src="{{ object.imagen.url }}" width="320px" height="75%">
     <br>
     {{object.caracteristicas}}
     <br>

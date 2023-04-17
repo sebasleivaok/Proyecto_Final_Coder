@@ -19,6 +19,9 @@ from AdoptMe.views import (index, PostList, PostDetail,
                           PostCreate, PostUpdate, PostDelete, 
                           SignUp, Login, Logout)
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('', index, name="index"),
     path('admin/', admin.site.urls),
@@ -31,3 +34,5 @@ urlpatterns = [
     path('login/', Login.as_view(), name="login"),
     path('logout/', Logout.as_view(), name="logout"),
     ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
