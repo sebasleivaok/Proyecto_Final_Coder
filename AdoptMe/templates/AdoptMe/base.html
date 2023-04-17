@@ -55,7 +55,12 @@
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="{% url 'index' %}"> Adopt Me</a>
+          {% if user.profile.imagen %}  
+            <a href="{% url 'profile-update' user.profile.id %}">
+            <img src="{{user.profile.imagen.url}}" height="100%" width="36px" style="border-radius: 50%; margin-right:10px">
+            </a>
+          {% endif %}
+           <a class="navbar-brand" href="{% url 'index' %}"> Adopt Me</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

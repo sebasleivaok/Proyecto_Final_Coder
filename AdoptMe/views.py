@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from AdoptMe.models import Post
+from AdoptMe.models import Post, Profile
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.views import LoginView, LogoutView
@@ -56,3 +56,14 @@ class Login(LoginView):
 
 class Logout(LogoutView):
     template_name = 'registration/logout.html'
+
+
+class ProfileCreate(CreateView):
+    model = Profile
+    fields = '__all__'
+    success_url = reverse_lazy("post-list")
+
+class ProfileUpdate(UpdateView):
+    model = Profile
+    fields = '__all__'
+    success_url = reverse_lazy("post-list")

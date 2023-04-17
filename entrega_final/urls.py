@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from AdoptMe.views import (index, PostList, PostDetail, 
                           PostCreate, PostUpdate, PostDelete, 
-                          SignUp, Login, Logout)
+                          SignUp, Login, Logout, ProfileCreate, ProfileUpdate)
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -33,6 +33,8 @@ urlpatterns = [
     path('signup/', SignUp.as_view(), name="signup"),
     path('login/', Login.as_view(), name="login"),
     path('logout/', Logout.as_view(), name="logout"),
+    path('profile/create', ProfileCreate.as_view(), name="profile-create"),
+    path('profile/<pk>/update', ProfileUpdate.as_view(), name="profile-update"),
     ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
