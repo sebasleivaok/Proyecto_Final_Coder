@@ -25,5 +25,9 @@
 #### ■ Cerrar sesión
 #### ■ Ingresar con usuario y contraseña (en caso de haber cerrado sesión)
 #### ■ Enviar y recibir mensajes de otros usuarios
-#### Nota: La opción de editar y eliminar post solo le está permitido al autor de la publicación del perrito.
+#### Nota: La opción de actualizar y borrar post solo le está permitido al autor de la publicación del perrito.
+
+## Video Demostrativo
+
+#### https://www.youtube.com/watch?v=q63UXG_uwi8
 
