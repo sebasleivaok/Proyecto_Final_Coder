@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from AdoptMe.views import (index, PostList, PostDetail, 
+from AdoptMe.views import (about, index, PostList, PostDetail, 
                           PostCreate, PostUpdate, PostDelete, 
-                          SignUp, Login, Logout, ProfileCreate, ProfileUpdate)
+                          SignUp, Login, Logout, ProfileCreate, 
+                          ProfileUpdate, MensajeCreate, MensajeList,
+                          MensajeDelete)
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -35,6 +37,10 @@ urlpatterns = [
     path('logout/', Logout.as_view(), name="logout"),
     path('profile/create', ProfileCreate.as_view(), name="profile-create"),
     path('profile/<pk>/update', ProfileUpdate.as_view(), name="profile-update"),
+    path('mensaje/create', MensajeCreate.as_view(), name="mensaje-create"),
+    path('mensaje/list', MensajeList.as_view(), name="mensaje-list"),
+    path('mensaje/<pk>/delete', MensajeDelete.as_view(), name="mensaje-delete"),
+    path('about/', about, name="about")
     ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

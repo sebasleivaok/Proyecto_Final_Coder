@@ -2,7 +2,7 @@
 
 {% block main %}
 
-<h1>Estas seguro que queres borrar el Post: {{object.id}}?</h1>
+<h1>Estas seguro que queres borrar el Mensaje: {{object.id}}?</h1>
 <form method="POST">
     {% csrf_token %}
     {{form}}

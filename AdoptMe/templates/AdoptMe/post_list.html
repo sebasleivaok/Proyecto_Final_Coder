@@ -1,7 +1,12 @@
 {% extends "AdoptMe/base.html" %}
 
 {% block main %}
-<h1>Mis Post</h1>
+    <h1>Mis Post</h1>
+
+    {% if not posts %}
+    <h2>No hay Post</h2>
+    {% endif %}
+
     <ul>
     {% for post in object_list %}
     <li>

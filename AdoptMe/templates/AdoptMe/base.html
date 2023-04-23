@@ -72,10 +72,16 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'post-list' %}">Mis Post</a>
               </li>
-              {% if user.is_authenticated %}
+            {% if user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'logout' %}"> {{user.username}} | Salir</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile-create' %}">Crear Perfil</a>
+                </li>                 
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mensaje-list' %}">Mis Mensajes</a>
+                </li>                  
               {% else %}
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Ingresar</a>
@@ -83,7 +89,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'signup' %}">Registrarme</a>
                 </li>
-              {% endif %}
+            {% endif %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'mensaje-create' %}">Enviar Mensaje</a>
+                </li>            
+                
             </ul>
             <form class="d-flex">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
